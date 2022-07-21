@@ -1,0 +1,79 @@
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:slateblue;  
+    font-family: 'Arial'; 
+    padding-top: 60px; 
+    padding-left: 70px;
+}  
+.sign_in{
+        width: 30%;
+        padding: 10px;
+        margin: auto;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: 6px solid #73AD21;  
+        background: white;  
+        margin-left: 30%;
+        height: 60%;
+        box-shadow: 0 0 10px 0 #000;
+        border-radius: 10px;
+        
+              
+}  
+h1{  
+    text-align: center;  
+    color: white;  
+    padding: 40px;  
+}    
+#Eemail{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 10px;  
+}  
+#Epass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 10px;  
+      
+}  
+#sign{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: white; 
+    background-color: green; 
+  
+  
+}  
+span{  
+    color: black;  
+    font-size: 17px;  
+} 
+#formBackground
+{
+    background-color: white;
+    border-radius: 10px
+}
+  
+.SigninButtonColor
+{
+    background-color: rgb(18, 180, 221);
+    border-radius: 40px ;
+    width: 89%;
+}
+#logo
+{
+    padding-left: 40px;
+    padding-top: 10px;
+}
+.eye{
+    position: absolute;
+}

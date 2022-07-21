@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login page</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}"> 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <link rel="stylesheet"type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"/>
+   <script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <br><br>
+    <h1 class="text-center text-white font- weight-bold">Create an Account</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 offset-4 divup">
+<div height="40px" width="80px" class="divdown">
+    
+    <div class="container text-center success" id="formBackground"> 
+        <br>
+        <form id ="MusicForm" >
+        <input type="name" class="form-control text"  id="naMe" placeholder="Name">
+        <span id = "nAme" class="text-danger font-weight-bold "></span>
+        <br>
+        <input type="phone" class="form-control text"  id="phonenum" placeholder="Phone number">
+        <span id = "ph_num" class="text-danger font-weight-bold "></span>
+        <br>
+        <input type="text" class="form-control text"  id="email" placeholder="Enter email">
+        <span id = "emailname" class="text-danger font-weight-bold "></span>
+        <br>
+        <input type="password" class="form-control text" id="psw" placeholder="Enter password">
+        
+        <span id="passwrd" class="text-danger font-weight-bold"></span>
+            
+        <br>
+        <input type="password" class="form-control text"  id="conform passwrd" placeholder="Conform Password">
+        <span id = "cnf pass" class="text-danger font-weight-bold "></span>
+        <br><br>
+        <input type="checkbox" id="check">  
+        <span>Check this custom checkbox</span>
+        <br><br>
+        
+        <button class="btn btn-success btn-lg forbutton SigninButtonColor" action="#" onclick="return validation()">Create account</button>
+        
+      </form>
+         
+        <br><br>
+            </div>
+            </div>
+            <br>
+            <div class="text-center text-white">
+                <a class= "text-white font- weight-bold">Forgot Your Password?</a>
+                <p><b>dont have account ?</b> <a class= "text-center text-white font- weight-bold">Log in</a></p>
+            </div>
+            </div>
+    </div>
+
+</div> 
+
+<script type="text/javascript">
+   
+     function validation(){
+        var name = document.getElementById('naMe').value;
+        var ph_num = document.getElementById('phonenum').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('psw').value;
+        var  confrm_password = document.getElementById('conform passwrd').value;
+        
+         if(name==""){
+           document.getElementById('nAme').innerHTML = "please fill the name field";
+           return false;
+         }
+         else{
+            document.getElementById('nAme').innerHTML = "";
+         }
+         
+         if(ph_num==""){
+           document.getElementById('ph_num').innerHTML = "please fill the phone number";
+           return false;
+         }
+         else{
+            document.getElementById('ph_num').innerHTML = "";
+         }
+         
+         
+         if(isNaN(ph_num)){
+            document.getElementById('ph_num').innerHTML = " enter only numeric value";
+           return false;
+         }
+         else{
+            document.getElementById('ph_num').innerHTML = "";
+         }
+         
+         if(ph_num.length<10){
+            document.getElementById('ph_num').innerHTML = " phone number must be 10 digts";
+           return false;
+         }
+         else{
+            document.getElementById('ph_num').innerHTML = "";
+         }
+
+        if(email==""){
+          document.getElementById('emailname').innerHTML = "please fill the emailname field";
+          return false;
+        }
+        else{
+            document.getElementById('emailname').innerHTML = "";
+         }
+       
+        if(email.indexOf('@')<=0){
+            document.getElementById('emailname').innerHTML = "@ Invalid Position";
+          return false; 
+        }
+        else{
+            document.getElementById('emailname').innerHTML = "";
+         }
+       
+        if((email.charAt(email.length-4)!='.') && (email.charAt(email.length-3)!='.'))
+        {
+            document.getElementById('emailname').innerHTML = " . Invalid Position";
+          return false; 
+        }
+        else{
+            document.getElementById('emailname').innerHTML = "";
+         }
+       
+         if(password==""){
+            document.getElementById('passwrd').innerHTML = "please fill the passwrd field";
+          return false;   
+        }
+        else{
+            document.getElementById('passwrd').innerHTML = "";
+         }
+        if((password.length<=8)||(password.length>20)){
+            document.getElementById('passwrd').innerHTML = "Password length must be between 8 to 20";
+          return false;
+        }
+        else{
+            document.getElementById('passwrd').innerHTML = "";
+         }
+        if(password.search (/[0-9]/)== -1){
+            document.getElementById('passwrd').innerHTML = "Password must contain atleast 1 number";
+          return false;
+        }
+        else{
+            document.getElementById('passwrd').innerHTML = "";
+         }
+         if(password.search (/[A-Z]/)== -1){
+            document.getElementById('passwrd').innerHTML = "Password must contain atleast 1 upper case";
+          return false;
+         }
+         else{
+            document.getElementById('passwrd').innerHTML = "";
+         }
+         
+         if(password.search (/[a-z]/)== -1){
+            document.getElementById('passwrd').innerHTML = "Password must contain atleast 1 lower case";
+          return false;
+         }
+         else{
+            document.getElementById('passwrd').innerHTML = "";
+         }
+         
+        if(password.search (/[!\@\#\$\% \&\^\*\(\)\_\-\+\=\<\>\?\,\.]/)== -1){
+            document.getElementById('passwrd').innerHTML = "Password must contain atleast 1 sp_char";
+          return false; 
+        }
+        else{
+            document.getElementById('passwrd').innerHTML = "";
+         } 
+         
+         if(confrm_password==""){
+           document.getElementById('cnf pass').innerHTML = "please fill conform password";
+           return false;
+         }
+         else{
+            document.getElementById('cnf pass').innerHTML = "";
+         }
+         
+         if(confrm_password!=password){
+           document.getElementById('cnf pass').innerHTML = "password not match";
+           return false;
+         } 
+         else{
+            document.getElementById('cnf pass').innerHTML = "";
+            document.getElementById("MusicForm").reset;   
+         } 
+         sendata();
+    }
+    function sendata(){
+      var naMe=$('#naMe').val()
+      var phonenum=$('#phonenum').val()
+      var email=$('#email').val()
+      var psw=$('#psw').val()
+      var data= [naMe,phonenum,email,psw]
+
+        $.ajax({
+            type: "POST",
+            url: "/insertdata",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: 'json',
+            success: function(result) {
+            console.log("Result:");
+            console.log(result);
+  }       
+        }); 
+    }
+ </script>
+</body>
+</html>
